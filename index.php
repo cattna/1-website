@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Number Identification</title>
+    <title>Scientific Number Checker</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
         * {
             margin: 0;
@@ -14,128 +14,103 @@
         }
 
         body {
-            background: linear-gradient(135deg, #D8E6FF, #FDE5EC);
-            font-family: 'Poppins', sans-serif;
+            background: #0E0E0E;
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            position: relative;
-            color: #333;
+            color: #EAEAEA;
         }
 
         .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.08);
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(8px);
-            position: relative;
-            z-index: 2;
-            max-width: 400px;
-            width: 90%;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 255, 170, 0.2);
+            width: 350px;
+            text-align: center;
         }
 
         h1 {
             font-size: 1.8em;
             font-weight: 700;
-            color: #444;
+            color: #00FFAA;
         }
 
         h2 {
-            font-size: 1em;
+            font-size: 0.9em;
             font-weight: 400;
-            color: #666;
-            margin-bottom: 15px;
+            color: #999;
+            margin-bottom: 20px;
         }
 
         label {
             font-size: 1em;
-            color: #555;
+            font-weight: 500;
+            color: #EAEAEA;
             display: block;
             margin-bottom: 8px;
         }
 
         input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             font-size: 1em;
-            border: 2px solid #a3baff;
+            border: none;
             border-radius: 8px;
             text-align: center;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: #00FFAA;
+            font-weight: 500;
+            transition: 0.3s ease;
         }
 
         input:focus {
             outline: none;
-            border-color: #ff94c2;
-            box-shadow: 0 0 8px rgba(255, 148, 194, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 5px rgba(0, 255, 170, 0.4);
         }
 
         button {
-            background: linear-gradient(45deg, #7CA3FF, #FF94C2);
-            color: #fff;
+            background: #00FFAA;
+            color: #0E0E0E;
             border: none;
-            padding: 12px 20px;
+            padding: 12px 18px;
             font-size: 1em;
-            border-radius: 25px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            font-weight: 500;
+            transition: 0.3s ease-in-out;
+            font-weight: 600;
             margin-top: 15px;
-            box-shadow: 0 3px 10px rgba(124, 163, 255, 0.5);
         }
 
         button:hover {
-            background: linear-gradient(45deg, #FF94C2, #7CA3FF);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 148, 194, 0.7);
+            background: #00D990;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 255, 170, 0.4);
         }
 
         .output {
             margin-top: 20px;
             padding: 12px;
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             font-size: 1em;
+            font-weight: 500;
+            color: #00FFAA;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .output p.success {
-            color: #28A745;
-            font-weight: 600;
+            color: #3DDC84;
         }
 
         .output p.error {
-            color: #D9534F;
-            font-weight: 600;
+            color: #FF4B4B;
         }
 
-        /* Background Soft Elements */
-        .soft-circle {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            opacity: 0.3;
-            filter: blur(50px);
-            z-index: 1;
-        }
-
-        .soft-circle:nth-child(1) {
-            background: #7CA3FF;
-            top: 10%;
-            left: 10%;
-        }
-
-        .soft-circle:nth-child(2) {
-            background: #FF94C2;
-            top: 60%;
-            left: 70%;
-        }
     </style>
-</head>
 <body>
 
     <div class="container">
