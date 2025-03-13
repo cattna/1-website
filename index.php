@@ -138,12 +138,9 @@
 </head>
 <body>
 
-    <div class="soft-circle"></div>
-    <div class="soft-circle"></div>
-
     <div class="container">
-        <h1>Scientific Number Identification</h1>
-        <h2>Nana N. Lego // 231011060006</h2>
+        <h1>Number Checker</h1>
+        <h2>Ericho R. Sambur // 231011060024</h2>
         <form id="numberForm" method="post">
             <label for="angka">Enter a number:</label>
             <input type="text" name="angka" id="angka" required>
@@ -153,25 +150,28 @@
     </div>
 
     <script>
-        document.getElementById('numberForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const inputValue = document.getElementById('angka').value.trim();
-            const isScientific = isAngkaIlmiah(inputValue);
-            const outputDiv = document.getElementById('outputDiv');
-            outputDiv.innerHTML = '';
+    document.getElementById('numberForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const inputValue = document.getElementById('angka').value.trim();
+        const isScientific = isAngkaIlmiah(inputValue);
+        const outputDiv = document.getElementById('outputDiv');
+        outputDiv.innerHTML = '';
 
-            const message = document.createElement('p');
-            message.textContent = isScientific 
-                ? `${inputValue} it is a number!` 
-                : `No, ${inputValue} is not a number.`;
-            message.classList.add(isScientific ? 'success' : 'error');
-            outputDiv.appendChild(message);
-        });
+        const message = document.createElement('p');
+        message.textContent = isScientific 
+            ? `${inputValue} it is a scientific number!` 
+            : `${inputValue} is not a number.`;
+        message.classList.add(isScientific ? 'success' : 'error');
+        outputDiv.appendChild(message);
+    });
 
-        function isAngkaIlmiah(angka) {
-            const num = Number(angka);
-            return !isNaN(num) && /\d+(\.\d+)?e[+-]?\d+/i.test(angka);
-        }
+    function isAngkaIlmiah(angka) {
+        // Pola regex untuk mengenali angka ilmiah, desimal, dan bilangan bulat
+        const pattern = /^-?\d+(\.\d+)?([eE][-+]?\d+)?$/;
+        
+        // Cek apakah sesuai format angka ilmiah
+        return pattern.test(angka);
+    }
     </script>
 
 </body>
